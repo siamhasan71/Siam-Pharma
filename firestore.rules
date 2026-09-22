@@ -1,0 +1,71 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Helper authorization functions
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    function isOwner(userId) {
+      return isAuthenticated() && request.auth.uid == userId;
+    }
+
+    // User profile and private account store partition
+    match /users/{userId} {
+      allow read, write: if isOwner(userId);
+
+      // Account-based due ledger, customer balances, and transaction history
+      match /dueLedger/{docId} {
+        allow read, write: if isOwner(userId);
+      }
+
+      // User persistent linked customer profiles
+      match /customers/{customerId} {
+        allow read, write: if isOwner(userId);
+      }
+
+      // User persistent linked supplier profiles
+      match /suppliers/{supplierId} {
+        allow read, write: if isOwner(userId);
+      }
+
+      // User persistent sales transactions subcollection
+      match /sales/{saleId} {
+        allow read, write: if isOwner(userId);
+      }
+
+      // User persistent purchases transactions subcollection
+      match /purchases/{purchaseId} {
+        allow read, write: if isOwner(userId);
+      }
+
+      // User persistent petty expenses subcollection
+      match /expenses/{expenseId} {
+        allow read, write: if isOwner(userId);
+      }
+
+      // Any additional user subcollections (customers, suppliers, drafts)
+      match /{allSubcollections=**} {
+        allow read, write: if isOwner(userId);
+      }
+    }
+
+    // Purchase history top-level collection for multi-terminal invoice lookup
+    match /purchase_history/{invoiceId} {
+      allow read: if isAuthenticated();
+      allow create: if isAuthenticated() && (request.resource.data.userId == request.auth.uid || !('userId' in request.resource.data));
+      allow update, delete: if isAuthenticated() && (resource.data.userId == request.auth.uid || !('userId' in resource.data));
+    }
+
+    // Medicines product catalog
+    match /medicines/{medicineId} {
+      allow read: if true;
+      allow write: if isAuthenticated();
+    }
+
+    // Cloud backups
+    match /backups/{backupId} {
+      allow read, write: if isAuthenticated();
+    }
+  }
+}

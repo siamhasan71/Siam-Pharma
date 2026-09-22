@@ -1,0 +1,6 @@
+{
+  "name": "Siam Pharma",
+  "description": "Comprehensive Pharmacy Management System featuring POS billing, inventory management, batch & expiry alerts, supplier purchase orders, and sales reports.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" fill="none">
+  <defs>
+    <linearGradient id="emGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10B981" stop-opacity="0.35"/>
+      <stop offset="50%" stop-color="#059669" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#047857" stop-opacity="0.05"/>
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#34D399" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#059669" stop-opacity="0.05"/>
+    </linearGradient>
+    <radialGradient id="glowCenter" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#10B981" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#064e3b" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Background radial glow -->
+  <circle cx="650" cy="200" r="280" fill="url(#glowCenter)"/>
+  <circle cx="150" cy="180" r="200" fill="url(#glowCenter)"/>
+
+  <!-- Molecular Hex Lattice (Pharmacology / Chemistry) -->
+  <g stroke="#34D399" stroke-width="1.5" stroke-opacity="0.18" fill="none">
+    <polygon points="120,40 150,22 180,40 180,75 150,92 120,75"/>
+    <polygon points="180,40 210,22 240,40 240,75 210,92 180,75"/>
+    <polygon points="150,92 180,75 210,92 210,127 180,145 150,127"/>
+    <circle cx="150" cy="22" r="3" fill="#34D399" fill-opacity="0.3"/>
+    <circle cx="210" cy="22" r="3" fill="#34D399" fill-opacity="0.3"/>
+    <circle cx="240" cy="75" r="3" fill="#34D399" fill-opacity="0.3"/>
+    
+    <polygon points="680,260 710,242 740,260 740,295 710,312 680,295"/>
+    <polygon points="740,260 770,242 800,260 800,295 770,312 740,295"/>
+    <polygon points="710,312 740,295 770,312 770,347 740,365 710,347"/>
+  </g>
+
+  <!-- Large Mortar & Pestle Watermark (Center-Right) -->
+  <g transform="translate(480, 50)" stroke="#10B981" stroke-opacity="0.22" fill="none">
+    <!-- Pestle angled -->
+    <path d="M160,30 L250,-10 C256,-13 263,-10 266,-4 L276,16 C279,22 276,29 270,32 L180,75" stroke-width="4" stroke-linecap="round" fill="#10B981" fill-opacity="0.04"/>
+    <!-- Mortar Bowl Body -->
+    <path d="M70,110 Q50,240 170,250 Q290,240 270,110 Z" stroke-width="4" fill="url(#emGrad)"/>
+    <!-- Mortar Rim -->
+    <ellipse cx="170" cy="110" rx="105" ry="24" stroke-width="4" fill="#047857" fill-opacity="0.08"/>
+    <!-- Mortar Base -->
+    <path d="M120,248 L100,270 Q170,285 240,270 L220,248" stroke-width="3" fill="#059669" fill-opacity="0.1"/>
+    
+    <!-- Rx Symbol inside Mortar -->
+    <text x="140" y="195" font-family="serif" font-size="64" font-weight="bold" fill="#34D399" fill-opacity="0.25" stroke="none">℞</text>
+  </g>
+
+  <!-- Academic Graduation Cap & Diploma Scroll (Pharmacy Degree / Education Watermark) -->
+  <g transform="translate(620, 30)" stroke="#34D399" stroke-opacity="0.22" fill="none">
+    <!-- Cap Diamond / Mortarboard -->
+    <polygon points="80,20 150,5 80,-10 10,5" stroke-width="3.5" fill="#10B981" fill-opacity="0.08"/>
+    <!-- Skull Cap Base -->
+    <path d="M40,12 C40,28 120,28 120,12 L120,28 C120,44 40,44 40,28 Z" stroke-width="3" fill="#047857" fill-opacity="0.1"/>
+    <!-- Tassel and Button -->
+    <circle cx="80" cy="5" r="3.5" fill="#34D399" fill-opacity="0.4"/>
+    <path d="M80,5 Q115,15 125,35" stroke-width="2.5" stroke-linecap="round"/>
+    <circle cx="125" cy="38" r="4" fill="#34D399" fill-opacity="0.4"/>
+
+    <!-- Diploma Scroll tied with ribbon -->
+    <g transform="translate(10, 80) rotate(-15)">
+      <!-- Scroll tube -->
+      <rect x="0" y="0" width="90" height="22" rx="4" stroke-width="3" fill="#10B981" fill-opacity="0.06"/>
+      <!-- Rolled ends -->
+      <ellipse cx="0" cy="11" rx="5" ry="11" stroke-width="2.5" fill="#059669" fill-opacity="0.12"/>
+      <ellipse cx="90" cy="11" rx="5" ry="11" stroke-width="2.5" fill="#059669" fill-opacity="0.12"/>
+      <!-- Ribbon around middle -->
+      <rect x="40" y="-2" width="10" height="26" rx="2" fill="#34D399" fill-opacity="0.3" stroke="none"/>
+      <path d="M45,24 L40,36 L45,33 L50,36 Z" fill="#34D399" fill-opacity="0.3" stroke="none"/>
+    </g>
+  </g>
+
+  <!-- Open Medical/Pharmacology Book & Caduceus (Center-Left) -->
+  <g transform="translate(230, 210)" stroke="#10B981" stroke-opacity="0.2" fill="none">
+    <!-- Left page -->
+    <path d="M0,40 Q45,25 90,35 L90,105 Q45,95 0,110 Z" stroke-width="3" fill="#065f46" fill-opacity="0.1"/>
+    <!-- Right page -->
+    <path d="M180,40 Q135,25 90,35 L90,105 Q135,95 180,110 Z" stroke-width="3" fill="#065f46" fill-opacity="0.1"/>
+    <!-- Spine -->
+    <path d="M90,35 L90,108" stroke-width="3.5" stroke-linecap="round"/>
+    <!-- Book lines / pharmacology text simulation -->
+    <line x1="18" y1="52" x2="72" y2="48" stroke-width="1.5" stroke-opacity="0.15"/>
+    <line x1="18" y1="66" x2="72" y2="62" stroke-width="1.5" stroke-opacity="0.15"/>
+    <line x1="18" y1="80" x2="65" y2="76" stroke-width="1.5" stroke-opacity="0.15"/>
+    
+    <line x1="108" y1="48" x2="162" y2="52" stroke-width="1.5" stroke-opacity="0.15"/>
+    <line x1="108" y1="62" x2="162" y2="66" stroke-width="1.5" stroke-opacity="0.15"/>
+    <line x1="108" y1="76" x2="155" y2="80" stroke-width="1.5" stroke-opacity="0.15"/>
+  </g>
+
+  <!-- Rod of Asclepius / Pharmacy Snake & Bowl (Far Left) -->
+  <g transform="translate(50, 140)" stroke="#34D399" stroke-opacity="0.2" fill="none">
+    <!-- Medical Cross with rounded edges -->
+    <path d="M25,0 H45 V25 H70 V45 H45 V70 H25 V45 H0 V25 H25 Z" stroke-width="2.5" fill="#10B981" fill-opacity="0.05"/>
+  </g>
+</svg>
